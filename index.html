@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rainerio@dev ~ portfolio</title>
+<meta name="description" content="Rainerio Jr. Agbayani — Data Engineer & AI Automation Engineer portfolio">
+<meta name="theme-color" content="#0a0e14">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="crt-overlay" aria-hidden="true"></div>
+
+<div class="terminal">
+
+  <!-- title bar -->
+  <div class="titlebar">
+    <div class="dots">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+    </div>
+    <div class="titlebar-text">rainerio@dev: ~/portfolio — bash — 80×24</div>
+    <button id="music-toggle" class="music-toggle" aria-pressed="false">
+      ♪ Background music: <span id="music-state">off</span>
+    </button>
+  </div>
+
+  <!-- scrollable terminal body -->
+  <main class="term-body" id="term-body">
+
+    <!-- banner -->
+    <section class="block" data-cmd="cat banner.txt">
+      <pre class="ascii" aria-label="RAINERIO">
+██████╗  █████╗ ██╗███╗   ██╗███████╗██████╗ ██╗ ██████╗
+██╔══██╗██╔══██╗██║████╗  ██║██╔════╝██╔══██╗██║██╔═══██╗
+██████╔╝███████║██║██╔██╗ ██║█████╗  ██████╔╝██║██║   ██║
+██╔══██╗██╔══██║██║██║╚██╗██║██╔══╝  ██╔══██╗██║██║   ██║
+██║  ██║██║  ██║██║██║ ╚████║███████╗██║  ██║██║╚██████╔╝
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝
+      </pre>
+      <p class="comment">// Rainerio Jr. Agbayani — Data Engineer · AI Automation Engineer</p>
+      <p class="comment">// building Python data pipelines, LLM-powered agents & backend systems that don't fall over</p>
+    </section>
+
+    <!-- about -->
+    <section class="block" data-cmd="cat about.json | jq '.'">
+      <h2 class="section-title">About</h2>
+      <dl class="kv">
+        <dt>"name"</dt><dd>"Rainerio Jr. Agbayani"</dd>
+        <dt>"location"</dt><dd>"Marikina, Philippines"</dd>
+        <dt>"email"</dt><dd><a href="mailto:rainerio.agbayanijr@gmail.com">rainerio.agbayanijr@gmail.com</a></dd>
+        <dt>"phone"</dt><dd>"+63 921 924 4239"</dd>
+        <dt>"linkedin"</dt><dd><a href="https://linkedin.com/in/raineriojr" target="_blank" rel="noopener">linkedin.com/in/raineriojr</a></dd>
+        <dt>"focus"</dt><dd>"Data Engineering, AI Automation, Backend Systems"</dd>
+        <dt>"summary"</dt><dd>"5 years building Python data pipelines, backend services & system integrations. Expanding into Airflow, dbt & cloud data warehousing — currently shipping AI/LLM automation on the side."</dd>
+      </dl>
+    </section>
+
+    <!-- experience -->
+    <section class="block" data-cmd="cat experience.log | sort -r">
+      <h2 class="section-title">Experience</h2>
+
+      <article class="job">
+        <h3 class="job-title">Data Engineer, Management &amp; Governance Senior Analyst</h3>
+        <p class="job-meta">Accenture</p>
+        <p class="job-date">Apr 2024 – Mar 2026</p>
+        <ul class="job-points">
+          <li>Built data pipelines using Python and SQL on GCP, automating processing and reporting workflows handling 10,000+ records daily — cutting manual reporting effort by ~5 hours/week</li>
+          <li>Wrote and optimized SQL queries for extraction, transformation, and validation across backend systems, supporting reliable reporting and downstream analytics</li>
+          <li>Built Splunk dashboards using SPL for real-time monitoring of pipeline health across 15+ systems, reducing incident detection time by ~30%</li>
+          <li>Designed and configured REST API and webhook integrations on GCP connecting backend systems with real-time order and customer data sources</li>
+          <li>Coordinated data and API integration requirements between technical and business teams; ran systematic quality checks on integration logs and outputs</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3 class="job-title">Conversational AI Engineer</h3>
+        <p class="job-meta">NQX · Contract</p>
+        <p class="job-date">Mar 2026 – May 2026</p>
+        <ul class="job-points">
+          <li>Integrated webhook fulfillment connecting conversational agents with backend services and external APIs for real-time data retrieval</li>
+          <li>Designed Dialogflow CX conversational flows and LLM-powered AI Agents (Playbooks) for chat and voice channels</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3 class="job-title">Systems Engineer</h3>
+        <p class="job-meta">Seven Seven Global Services Inc.</p>
+        <p class="job-date">Sep 2023 – Apr 2024</p>
+        <ul class="job-points">
+          <li>Acted as technical liaison between engineering teams and non-technical stakeholders across SDLC phases; managed deployments across dev, staging, and production</li>
+          <li>Conducted API testing and validation using Postman; participated in UAT and coordinated defect resolution</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3 class="job-title">Junior Backend Developer</h3>
+        <p class="job-meta">MRM</p>
+        <p class="job-date">Jul 2022 – Sep 2023</p>
+        <ul class="job-points">
+          <li>Performed API testing, defect documentation, and backend deployment support across development and QA teams</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3 class="job-title">Software Engineer</h3>
+        <p class="job-meta">Global 3D Systems Inc.</p>
+        <p class="job-date">Mar 2021 – Jul 2022</p>
+        <ul class="job-points">
+          <li>Developed a full-stack web application for a 3D printer using Python and C</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- skills -->
+    <section class="block" data-cmd="ls -la ./skills/">
+      <h2 class="section-title">Skills</h2>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">Apache Airflow</span>
+        <span class="chip">dbt</span>
+        <span class="chip">ETL/ELT Pipeline Design</span>
+        <span class="chip">Data Modeling</span>
+        <span class="chip">Data Quality Testing</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Redis</span>
+        <span class="chip">Docker</span>
+        <span class="chip">Terraform</span>
+        <span class="chip">GitHub Actions (CI/CD)</span>
+        <span class="chip">Google Cloud Run</span>
+        <span class="chip">Render</span>
+        <span class="chip">Splunk / SPL</span>
+        <span class="chip">n8n</span>
+        <span class="chip">Workflow Orchestration</span>
+        <span class="chip">LangChain</span>
+        <span class="chip">RAG</span>
+        <span class="chip">Prompt Engineering</span>
+        <span class="chip">OpenAI / Claude APIs</span>
+      </div>
+    </section>
+
+    <!-- education -->
+    <section class="block" data-cmd='grep "degree" education.yaml'>
+      <h2 class="section-title">Education</h2>
+      <dl class="kv">
+        <dt>degree:</dt><dd>BS Computer Engineering</dd>
+        <dt>school:</dt><dd>Technological Institute of the Philippines, Manila</dd>
+        <dt>year:</dt><dd>2022</dd>
+      </dl>
+    </section>
+
+    <!-- certifications -->
+    <section class="block" data-cmd="cat certs.txt">
+      <h2 class="section-title">Certifications</h2>
+      <ul class="plain-list">
+        <li>Certified Salesforce B2C Commerce Developer</li>
+      </ul>
+    </section>
+
+    <!-- projects -->
+    <section class="block" data-cmd="cat projects.md">
+      <h2 class="section-title">Projects</h2>
+
+      <article class="proj">
+        <h3 class="proj-title">End-to-End Batch ELT Pipeline</h3>
+        <p class="proj-desc">Self-directed pipeline ingesting data from a public API with incremental, idempotent loading into a PostgreSQL warehouse. Orchestrated with Airflow (retry logic + failure alerting), modeled staging-to-mart layers in dbt with automated data quality tests (uniqueness, null, referential integrity), fully containerized with Docker, infra provisioned via Terraform, and GitHub Actions runs dbt tests on every commit.</p>
+        <p class="proj-tags">Python · Apache Airflow · dbt · PostgreSQL · Docker · Terraform · GitHub Actions</p>
+      </article>
+    </section>
+
+    <!-- contact / closing -->
+    <section class="block" data-cmd="mail rainerio.agbayanijr@gmail.com">
+      <p class="comment">// open to Data Engineer / AI Automation Engineer roles — let's talk.</p>
+      <p class="prompt-line">
+        <span class="prompt">~/portfolio</span> <span class="chevron">❯</span>
+        <span class="cursor" aria-hidden="true">▌</span>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- status bar -->
+  <div class="statusbar">
+    <span>ONLINE</span>
+    <span>UTF-8</span>
+    <span>bash</span>
+    <span id="status-pos">Ln 1, Col 1</span>
+  </div>
+
+</div>
+
+<audio id="bg-audio" loop preload="none">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
