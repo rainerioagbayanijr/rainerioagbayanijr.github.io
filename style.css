@@ -63,7 +63,9 @@ body {
   padding: 10px 14px;
   background: var(--bg-raised);
   border-bottom: 1px solid var(--border);
-  position: sticky; top: 0;
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
 }
 
 .dots { display: flex; gap: 7px; flex-shrink: 0; }
@@ -102,10 +104,6 @@ body {
 .term-body {
   padding: 28px 28px 40px;
 }
-
-.term-body::-webkit-scrollbar { width: 9px; }
-.term-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 6px; }
-.term-body::-webkit-scrollbar-track { background: transparent; }
 
 .block {
   margin-bottom: 40px;
@@ -196,6 +194,21 @@ a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .proj-desc { margin: 0 0 6px; color: var(--text); font-size: 13.5px; }
 .proj-tags { margin: 0; color: var(--text-dim); font-size: 12px; }
 
+.contact-btn {
+  display: inline-block;
+  margin-top: 4px;
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contact-btn:hover { background: var(--green); color: var(--bg); }
+.contact-btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
 .prompt-line { margin-top: 18px; color: var(--text); }
 .prompt { color: var(--cyan); }
 .chevron { color: var(--green); }
@@ -215,7 +228,9 @@ a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
   border-top: 1px solid var(--border);
   color: var(--text-dim);
   font-size: 11px;
-  position: sticky; bottom: 0;
+  position: sticky;
+  bottom: env(safe-area-inset-bottom, 0px);
+  z-index: 10;
 }
 .statusbar span:first-child { color: var(--green); }
 #status-pos { margin-left: auto; }
