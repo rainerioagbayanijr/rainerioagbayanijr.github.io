@@ -67,6 +67,20 @@
       <h2 class="section-title">Experience</h2>
 
       <article class="job">
+        <h3 class="job-title">AI Solution and Automation Specialist</h3>
+        <p class="job-meta">AMG Collection Services Inc. — tech-enabled debt recovery &amp; accounts receivable management agency (Philippines)</p>
+        <p class="job-date">Sep 2026 – Present</p>
+        <p class="comment" style="margin:0;">// sole AI/automation hire — building the company's agentic AI & automation stack end-to-end (n8n, Python, LLMs, RAG). Full write-up coming soon.</p>
+      </article>
+
+      <article class="job">
+        <h3 class="job-title">Freelance AI Automation Engineer</h3>
+        <p class="job-meta">Independent / Contract</p>
+        <p class="job-date">Jun 2026 – Present</p>
+        <p class="comment" style="margin:0;">// see Projects below for shipped work</p>
+      </article>
+
+      <article class="job">
         <h3 class="job-title">Data Engineer, Management &amp; Governance Senior Analyst</h3>
         <p class="job-meta">Accenture</p>
         <p class="job-date">Apr 2024 – Mar 2026</p>
@@ -142,6 +156,7 @@
         <span class="chip">Splunk / SPL</span>
         <span class="chip">n8n</span>
         <span class="chip">Workflow Orchestration</span>
+        <span class="chip">Agentic AI</span>
         <span class="chip">LangChain</span>
         <span class="chip">RAG</span>
         <span class="chip">Prompt Engineering</span>
@@ -172,9 +187,43 @@
       <h2 class="section-title">Projects</h2>
 
       <article class="proj">
-        <h3 class="proj-title">End-to-End Batch ELT Pipeline</h3>
-        <p class="proj-desc">Self-directed pipeline ingesting data from a public API with incremental, idempotent loading into a PostgreSQL warehouse. Orchestrated with Airflow (retry logic + failure alerting), modeled staging-to-mart layers in dbt with automated data quality tests (uniqueness, null, referential integrity), fully containerized with Docker, infra provisioned via Terraform, and GitHub Actions runs dbt tests on every commit.</p>
-        <p class="proj-tags">Python · Apache Airflow · dbt · PostgreSQL · Docker · Terraform · GitHub Actions</p>
+        <h3 class="proj-title">AI Lead Qualification &amp; Booking Assistant — Personal Training Studio</h3>
+
+        <p class="proj-label">Why I built this</p>
+        <p class="proj-desc">A client — a coach running a fitness gym — was losing leads because follow-up was too slow. People filled out an interest form and nobody got back to them with the right context in time. My solution was this automation: it captures the lead, has AI qualify it, organizes it in a CRM, alerts the coach, and starts follow-up automatically.</p>
+
+        <p class="proj-label">Problem it solves</p>
+        <p class="proj-desc">Coaches lose leads to slow or inconsistent follow-up. Someone expresses interest, and if a human doesn't respond fast with the right context, the lead goes cold.</p>
+
+        <p class="proj-label">Stack</p>
+        <p class="proj-tags">Tally (form) → n8n (orchestration) → Groq (Llama/GPT-OSS via LangChain nodes) (AI classification) → HubSpot (CRM) → Gmail (alerts + follow-up) → Google Sheets (logging)</p>
+      </article>
+
+      <article class="proj">
+        <h3 class="proj-title">AI Ops — Live Scheduling Engine</h3>
+
+        <p class="proj-desc">An automated pipeline that builds a full week of livestream staffing from free-text availability, with no manual matching step. Staff message their availability in plain English; a deterministic engine matches qualified hosts and admins to every session, prevents double-bookings, and distributes work by weighted fairness. The scheduler reviews a draft, ticks approve, and each person receives their own shift on their own channel — with a calendar file, an immutable snapshot, and an audit trail of every change produced automatically.</p>
+
+        <p class="proj-label">Problem it solves</p>
+        <p class="proj-desc">Manual scheduling across multiple client brands is slow and error-prone — hosts get double-booked across brands nobody is cross-checking, sessions reach air time understaffed, and workload piles onto the same reliable few. When someone calls in sick, cover goes to whoever replies first in a group chat, which quietly undoes any fairness the coordinator was trying to maintain. This system automates the decisions rather than just the reminders, cutting hours of weekly coordination to a sixty-second run.</p>
+
+        <p class="proj-label">Tech stack</p>
+        <p class="proj-tags">n8n (self-hosted) · Airtable · Groq (Llama 3.3 70B) · Telegram Bot API · JavaScript (deterministic assignment engine) · Docker · Cloudflare Tunnel</p>
+
+        <p class="proj-label">Design note</p>
+        <p class="proj-desc">The AI handles language only — parsing availability and absence messages, drafting notifications. Assignment logic is plain JavaScript, because a shift allocation has to be exact, reproducible and defensible when someone asks why they got fewer hours than a colleague.</p>
+      </article>
+
+      <article class="proj">
+        <h3 class="proj-title">Policy Q&amp;A Bot</h3>
+
+        <p class="proj-desc">A RAG-powered question answering system for insurance policy documents, served as a FastAPI service. Ask questions in plain English and get grounded answers with clause-level citations — strictly from the policy wording.</p>
+
+        <p class="proj-label">Problem it solves</p>
+        <p class="proj-desc">Insurance policies bury critical answers — coverage limits, exclusions, waiting periods — inside dense, boilerplate-heavy legal text that's slow and error-prone to search manually. This system lets anyone ask a plain-English question (e.g. "What is the waiting period for accidental damage?") and get a grounded answer with exact clause-level citations (e.g. "QBE_Policy.pdf §3.2 (Exclusions), p.12"), computed deterministically from retrieved chunk metadata rather than invented by the LLM. If the answer isn't in the documents, it says so and points to the closest related clauses instead of guessing.</p>
+
+        <p class="proj-label">Tech stack</p>
+        <p class="proj-tags">Python 3.12 · uv · FastAPI · LangChain · ChromaDB · rank-bm25 · HuggingFace (all-MiniLM-L6-v2) · Groq API (LLaMA 3.3 70b) · tiktoken · pypdf · python-dotenv · Docker</p>
       </article>
     </section>
 
